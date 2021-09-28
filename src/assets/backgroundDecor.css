@@ -1,0 +1,32 @@
+
+.funkySvg{
+    height: 100%;
+    position: absolute;
+    right: 0;
+}
+
+.funkyPath{
+    stroke: #bb5436;
+    fill: none;
+    filter: drop-shadow(0 0 0px rgb(138, 110, 91));
+    animation: 1000ms linear pulse infinite alternate;
+}
+@keyframes pulse {
+    from{filter:drop-shadow(0 0 3px rgb(138, 110, 91));}
+    to{filter:drop-shadow(0 0 5px rgb(138, 110, 91));}   
+}
+
+.bigLogoBox{
+    padding-top: 10%;
+    position: absolute;
+    z-index: -2;
+    width: 80%;
+    top: 0px;
+    filter: blur(0.5px);
+}
+
+.pathBigLogo{
+    fill: var(--darkMid);
+    animation:2000ms linear blurLoop alternate infinite;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7));
+}

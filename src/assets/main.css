@@ -1,0 +1,54 @@
+/* ----- FONTS ----- */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&display=swap');
+
+:root {
+    --light: white;
+    --lightMid: #A6B63D;
+    --darkMid: #202020;
+    --dark: #1d1915;
+
+    font-size: 62.5%;
+    /*thème chocolat
+
+    #bd8766
+    #241e16
+    #292219
+
+    */
+    /*thème menthe
+    --darkMid: #375248;
+    --dark: #375a4d;
+    #f3e9e0
+    */
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    user-select: none;
+}
+body{
+    background-color: var(--dark);
+}
+#app{
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* ----- comon styles -----*/
+.flexCentered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lightText{
+    color: var(--light);
+}
+
+
+
+
