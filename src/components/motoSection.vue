@@ -1,6 +1,6 @@
 <template>
     <section class="motoSection">
-        <p class="moto fr lightText trad" id="moto" @click="handleClick">{{moto}}</p>
+        <p class="moto fr lightText trad" id="moto" @click="handleClick" v-html="moto"></p>
     </section>
 </template>
 
@@ -14,7 +14,6 @@ export default {
         const traduire = translate()
 
         const handleClick = (e) => {
-            console.log('eric')
             traduire(e)
         }
         return { handleClick, moto }
@@ -30,6 +29,7 @@ export default {
     align-items: center;
     flex-direction: row-reverse;
     z-index: 1000;
+    position: relative;
 }
 .moto{
     font-size: max(2.5vw, 16px);
@@ -38,5 +38,6 @@ export default {
     text-shadow: 0 0 8px black;
     filter: blur(0px);
     animation: 1000ms ease-out blurIn;
+    position: absolute;
 }
 </style>

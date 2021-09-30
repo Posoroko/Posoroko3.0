@@ -2,7 +2,7 @@
   <svg class="funkySvg" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 161.86 1790.56" style="enable-background:new 0 0 161.86 1790.56;" xml:space="preserve">
         <g>
-          <path class="funkyPath" id="funkyPath" d="M18.73,0c-25.63,81.64,97.06,175.94,72.08,270.25c-3.53,13.34-8.4,27-18.46,36.46
+          <path ref="swirlPath" class="funkyPath" id="funkyPath" d="M18.73,0c-25.63,81.64,97.06,175.94,72.08,270.25c-3.53,13.34-8.4,27-18.46,36.46
             c-10.05,9.46-26.62,13.26-37.84,5.22s-17.83-37.69,2.52-33.47c21.58-0.29,17.19,151.15,24.76,235.7
             c1.88,20.98,4.84,43.06,17.59,59.83s39.33,24.91,55.24,11.1c15.91-13.8,2.38-47.93-17.75-41.73c-20.93,6.45-16.23,37.03-8.73,57.6
             c23.26,63.76,30.67,133.25,21.37,200.48c-2.36,17.07-7.04,35.93-21.67,45.06c-14.62,9.13-39.77-2.35-35.52-19.05
@@ -17,19 +17,48 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 export default {
     setup() {
+        const swirlPath = ref(null)
+        const body = document.getElementsByTagName('body');
+        let ratio = 0;
+        window.addEventListener('scroll', handleScroll)
+        onMounted(() => {
+            swirlPath.value.style.strokeDasharray = swirlPath.value.getTotalLength();
+            swirlPath.value.style.strokeDashoffset = swirlPath.value.getTotalLength();
+        });
+        
+        
+        function handleScroll() {
+            
+            ratio = swirlPath.value.getTotalLength() * window.scrollY / body[0].clientHeight;
+            swirlPath.value.style.strokeDashoffset = swirlPath.value.getTotalLength() - ratio * 1.5 ;
 
         
+        }
 
-
-
+        return { swirlPath }
     }
 
 }
 </script>
 
-<style>
+<style scoped>
+.funkySvg{
+    height: 100%;
+    position: absolute;
+    right: 0;
+}
 
+.funkyPath{
+    stroke: #bb5436;
+    fill: none;
+    filter: drop-shadow(0 0 0px rgb(138, 110, 91));
+    animation: 1000ms linear pulse infinite alternate;
+}
+@keyframes pulse {
+    from{filter:drop-shadow(0 0 3px rgb(138, 110, 91));}
+    to{filter:drop-shadow(0 0 5px rgb(138, 110, 91));}   
+}
 </style>

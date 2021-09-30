@@ -8,7 +8,7 @@
             </div>
             
         <h2 class="jobsBox lightText">
-            <soan class="job0 job">développeur web</soan>
+            <span class="job0 job">développeur web</span>
             <span class="job1 job">designer</span>
             <span class="job2 job">ux designer</span>
             <span class="job3 job">webmaster</span>
@@ -20,7 +20,13 @@
 </template>
 
 <script>
+import { ref } from 'vue'
 export default {
+    setup() {
+        
+
+        return {  }
+    }
 
 }
 </script>
@@ -34,7 +40,7 @@ export default {
 
 }
 .photoEricBox{
-    width: 100%;
+    width: 60%;
     position: relative;
 
 }
@@ -44,14 +50,14 @@ export default {
 
 }
 .ericName{
-    font-size: max(2vw, 14px);
+    font-size: max(1.5vw, 12px);
     font-weight: 100;
     position: absolute;
     top: 0;
     left: 0;
 }
 .jobsBox{
-    font-size: max(1.8vw, 13px);
+    font-size: max(1vw, 10px);
     font-weight: 100;
     position: absolute;
     bottom: 0px;

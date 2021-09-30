@@ -26,14 +26,14 @@
       </div>
 
       <div class="subtitleBox lightText tradBox">
-        <p class="subtitle fr trad" id="subtitle" @click="handleClick" >{{subtitle}}</p>
+        <p class="subtitle fr trad" id="subtitle" @click="handleClick" v-html="subtitle"></p>
       </div>
 
     </section>
 </template>
 
 <script>
-import { ref  } from 'vue'
+import { ref } from 'vue'
 import translate from '@/composables/translate'
 
 export default {
@@ -41,6 +41,8 @@ export default {
     setup(props) {
         const subtitle = ref(props.texts.subtitle.fr)
         const traduire = translate()
+
+        
 
         const handleClick = (e) => {
             traduire(e)

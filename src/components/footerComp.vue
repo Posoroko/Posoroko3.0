@@ -1,5 +1,5 @@
 <template>
-<section class="footer">
+    <section class="footer">
         <div class="logoBox">
             
             <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -44,18 +44,19 @@ export default {
 <style scoped>
 .footer{
     width: 100%;
-    background-color: var(--dark);
     padding-bottom: 8vw;
+    position: relative;
 }
 .logoBox{
     width: min(25%, 200px);
     margin: auto;
     overflow: visible;
+    box-shadow: 0 0 0px rgb(255, 146, 56);
 }
 .pathLogo{
     fill: none;
     stroke: rgb(255, 219, 190);
-    filter: drop-shadow(0 0 30px rgb(255, 146, 56));
+    filter: drop-shadow(0 0 10px rgb(238, 227, 218));
     stroke-width:0.25;
 }
 </style>
