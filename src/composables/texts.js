@@ -5,7 +5,7 @@ const siteTexts = () => {
             eng: `Web development <br> and design`
         },
         moto: {
-            fr: `Définir vos besoin, votre image et vos objectifs.<br>
+            fr: `Définir vos besoins, votre image et vos objectifs.<br>
                 Créer le site web qui représente votre réalité.<br>
                 Construire des outils ergonomiques qui  <br>
                 servent vos utilisateurs.`,

@@ -1,5 +1,5 @@
 <template>
-        <menuComp />
+          <menuComp />
 
 
           <bigLogo />

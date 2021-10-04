@@ -1,10 +1,24 @@
 <template>
 
-    <div class="menuBox" id="menuBox">
-        <div class="menuBtnBox"  @click="handleClick">
-            <p class="lightText menuBtn" ref="menuBtn"  id="menuBtn">{{menuBtnContent}}</p>
+    <div class="menuSection" id="menuSection" @click="handleClick">
+        <div class="backdrop" id="backdrop" ref="backdrop" >
+            <div class="menuContentBox" >
+        
+                <menuContent :content="menuComponent"/>
+               
+                
+            </div>
+        </div>
+        <div class="menuBtnBox" >
+            <p class="lightText menuBtn" ref="contactRef"  id="contactBtn" @click="handleClick">{{contact}}</p>
+            <p class="lightText menuBtn" ref="portfolioRef"  id="portfolioBtn" v-if="!menuIsOn" @click="handleClick">{{portfolio}}</p>
         </div>
 
+            
+
+        
+        
+        
           
     </div>
 
@@ -17,45 +31,56 @@
 
 <script>
 import { ref } from 'vue'
+import menuContent from '@/components/menuContent'
 
 export default {
+    components: { menuContent },
     setup() {
-        let menuBtnContent = ref('menu')
+        let contact = ref('contact')
+        let contactRef = ref()
+        
+        let portfolio = ref('portfolio')
+        let portfolioRef = ref()
+
+        let menuComponent = ref('')
+
         let transitioning = false
-        let menuBtn = ref()
-        let menuIsOn = false
+        let menuIsOn = ref(false)
+        let backdrop = ref()
 
         function handleClick(e){
+            
             if(!transitioning){
+                
+                console.log(menuComponent.value)
                 transitioning = true
-                if(!menuIsOn){
-                    menuIsOn = true
-                    menuBtn.value.style.fontFamily = 'Material Icons'
-                    menuBtnContent.value = 'close'
+                if(!menuIsOn.value){
+                    menuIsOn.value = true
+                    contactRef.value.style.fontFamily = 'Material Icons'
+                    contact.value = 'close'
+                    menuComponent.value = e.target.id
+
                     
                 } else{
-                    menuBtn.value.style.fontFamily = "'Be Vietnam Pro', sans-serif"
-                    menuBtnContent.value = 'menu'
-                    menuIsOn = false
+                    contactRef.value.style.fontFamily = "'Be Vietnam Pro', sans-serif"
+                    contact.value = 'contact'
+                    menuIsOn.value = false
                 }
-                setTimeout(() => {transitioning = false}, 1000)
-                
+                setTimeout(() => {transitioning = false}, 1000) 
             }
-
-            
         }
 
         
 
         
 
-        return { menuBtnContent, handleClick, menuBtn }
+        return { contact, handleClick, contactRef, backdrop, menuIsOn, portfolio, portfolioRef, menuComponent }
     }
 }
 </script>
 
 <style>
-.menuBox{
+.menuSection{
     top: 0;
     bottom: 0;
     left: 0;
@@ -63,6 +88,16 @@ export default {
     position: fixed;
     z-index: 10000;
     pointer-events: none;
+
+}
+.backdrop{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    display: grid;
+    place-items: center;
 }
 .menuBtnBox{
     position: absolute;
@@ -74,9 +109,16 @@ export default {
     font-size: max(1.3vw, 12px);
     font-weight: 100;
 }
-
-
-
+.menuContentBox{
+    width: min(100%, 1000px);
+    height: 50vh;
+    
+}
+.menuItem{
+    font-size: 25px;
+    font-weight: 100;
+    padding: 25px;
+}
 
 
 </style>

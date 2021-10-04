@@ -13,10 +13,11 @@ import router from './router'
 createApp(App).use(router).mount('#app')
 
 
-const menuBtn_p = document.getElementById('menuBtn')
+const contactBtn = document.getElementById('contactBtn')
+const portfolioBtn = document.getElementById('portfolioBtn')
 const app_div = document.getElementById('app')
-const menuBox_div = document.getElementById('menuBox')
-const menuBtnBox = document.getElementById('menuBtnBox')
+const menuSection = document.getElementById('menuSection')
+const backdrop = document.getElementById('backdrop')
 
 let menuIsOn = false
 let inTransition = false
@@ -33,19 +34,21 @@ function openMenu() {
             easing: 'cubic-bezier(0,.89,.6,1.03)',
             fill: 'forwards'
         })
-        menuBox_div.animate([
-            {backgroundColor: 'rgba(15, 13, 13, 0)'},
-            {backgroundColor: 'rgba(15, 13, 13, 0.6)'}
-        ], {
-            duration: 1000,
-            easing: 'cubic-bezier(0,.89,.6,1.03)',
-            fill: 'forwards'
-        })
+     
+            backdrop.animate([
+                {opacity: '0'},
+                {opacity: '1'}
+            ], {
+                duration: 1000,
+                easing: 'cubic-bezier(0,.89,.6,1.03)',
+                fill: 'forwards'
+            })
+ 
         
-        menuBox_div.classList.replace('menuBoxOff', 'menuBoxOn')
+
         setTimeout( () => {
             inTransition = false
-            menuBox_div.style.pointerEvents = 'auto'
+            menuSection.style.pointerEvents = 'auto'
         }, 1000)
         menuIsOn = true
 
@@ -60,20 +63,19 @@ function openMenu() {
             easing: 'cubic-bezier(0,.89,.6,1.03)',
             fill: 'forwards'
         })
-        menuBox_div.animate([
-            {backgroundColor: 'rgba(15, 13, 13, 0,6)'},
-            {backgroundColor: 'rgba(15, 13, 13, 0)'}
+        backdrop.animate([
+            {opacity: '1'},
+            {opacity: '0'}
         ], {
             duration: 1000,
             easing: 'cubic-bezier(0,.89,.6,1.03)',
             fill: 'forwards'
         })
-
         setTimeout(() => {
-            menuBox_div.classList.replace('menuBoxOn', 'menuBoxOff')
+
             inTransition = false
             menuIsOn = false
-            menuBox_div.style.pointerEvents = 'none'
+            menuSection.style.pointerEvents = 'none'
         }, 1000)
 
     }
@@ -81,8 +83,9 @@ function openMenu() {
 
 
 
-menuBtn_p.addEventListener('click', openMenu)
-menuBox_div.addEventListener('click', openMenu)
+contactBtn.addEventListener('click', openMenu)
+portfolioBtn.addEventListener('click', openMenu)
+menuSection.addEventListener('click', openMenu)
 
 
 
