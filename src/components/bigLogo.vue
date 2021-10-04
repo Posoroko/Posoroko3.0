@@ -66,6 +66,7 @@ export default {
     top: 0;
     filter: blur(0.5px);
     overflow: hidden;
+    pointer-events: none;
 }
 .bigLogoSVG{
     width: 100%;

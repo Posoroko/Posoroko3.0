@@ -30,6 +30,7 @@ export default {
     flex-direction: row-reverse;
     z-index: 1000;
     position: relative;
+    pointer-events: none;
 }
 .moto{
     font-size: max(2.5vw, 16px);
@@ -39,5 +40,6 @@ export default {
     filter: blur(0px);
     animation: 1000ms ease-out blurIn;
     position: absolute;
+    pointer-events: auto;
 }
 </style>
