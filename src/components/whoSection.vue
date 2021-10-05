@@ -3,6 +3,7 @@
         
         <div class="photoEricBox">
             <img class="photoEric" src="https://i.ibb.co/PFN5JbK/Eric-Podhorecki.jpg" alt="Eric Podhorecki">
+            <div class="textureBox"></div>
             <div class="ericNameBox">
                 <h3 class="ericName lightText">Eric Podhorecki</h3>
             </div>
@@ -42,13 +43,14 @@ export default {
 .photoEricBox{
     width: 60%;
     position: relative;
-
+    background-color: rgb(112, 129, 110);
 }
 .photoEric{
     width: 100%;
     box-shadow: 0 0 20px;
-
+    mix-blend-mode:hard-light;
 }
+
 .ericName{
     font-size: max(1.5vw, 12px);
     font-weight: 100;
@@ -64,5 +66,38 @@ export default {
     left: 0;
     display: flex;
     flex-direction: column;
+}
+.textureBox{
+    background-image: url(https://i.ibb.co/bXgjx54/test-texture-tv.jpg);
+    background-size: contain;
+    background-repeat: repeat;
+    height: 100%;
+    width: 100%;
+    mix-blend-mode:difference;
+    /* animation:  50ms linear buzz alternate infinite; */
+    opacity: 0.2;
+    position: absolute;
+    top:0;
+    left: 0;
+    filter:contrast(5);
+}
+@keyframes buzz {
+    0%{
+        filter: blur(0px);
+        transform: translate(0px, 0px);
+    }
+    0%{
+        filter: blur(0px);
+        transform: translate(1px, 0px);
+    }
+    0%{
+        filter: blur(0px);
+        transform: translate(0px, 1px);
+    }
+    
+    100%{ 
+        filter: blur(1px);
+        transform: translate(-1px, 0px);
+    }
 }
 </style>

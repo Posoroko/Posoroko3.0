@@ -28,12 +28,12 @@ export default {
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
-    z-index: 1000;
+
     position: relative;
     pointer-events: none;
 }
 .moto{
-    font-size: max(2.5vw, 16px);
+    font-size: max(2.3vw, 16px);
     font-weight: 100;
     text-align: end;
     text-shadow: 0 0 8px black;

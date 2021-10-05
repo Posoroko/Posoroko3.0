@@ -13,36 +13,37 @@ import router from './router'
 createApp(App).use(router).mount('#app')
 
 
-const contactBtn = document.getElementById('contactBtn')
-const portfolioBtn = document.getElementById('portfolioBtn')
+
 const app_div = document.getElementById('app')
 const menuSection = document.getElementById('menuSection')
-const backdrop = document.getElementById('backdrop')
+
 
 let menuIsOn = false
 let inTransition = false
 
 function openMenu() {
-    
+
     if(!menuIsOn && !inTransition){
         inTransition = true
         app_div.animate([
-            {width: '100%'},
+            {width: '99%'},
             {width: '70%'}
         ], {
             duration: 1000,
-            easing: 'cubic-bezier(0,.89,.6,1.03)',
+            easing: 'cubic-bezier(.42,.2,.1,1.08)',
             fill: 'forwards'
         })
      
-            backdrop.animate([
-                {opacity: '0'},
-                {opacity: '1'}
+        setTimeout(() => {
+            menuSection.animate([
+                {backgroundColo: "rgba(0, 0, 0, 0)"},
+                {backgroundColor: "rgba(0, 0, 0, 1)"}
             ], {
                 duration: 1000,
-                easing: 'cubic-bezier(0,.89,.6,1.03)',
+                easing: 'cubic-bezier(.02,.42,.1,1)',
                 fill: 'forwards'
             })
+        }, 800)
  
         
 
@@ -55,37 +56,46 @@ function openMenu() {
 
     }else if(menuIsOn && !inTransition){
         inTransition = true
-        app_div.animate([
-            {width: '70%'},
-            {width: '99%'}
+        
+        menuSection.animate([
+            {backgroundColor: "rgba(0, 0, 0, 1)"},
+            {backgroundColor: "rgba(0, 0, 0, 0)"}
         ], {
             duration: 1000,
-            easing: 'cubic-bezier(0,.89,.6,1.03)',
+            easing: 'cubic-bezier(.02,.42,.1,1)',
             fill: 'forwards'
         })
-        backdrop.animate([
-            {opacity: '1'},
-            {opacity: '0'}
-        ], {
-            duration: 1000,
-            easing: 'cubic-bezier(0,.89,.6,1.03)',
-            fill: 'forwards'
-        })
-        setTimeout(() => {
-
-            inTransition = false
-            menuIsOn = false
-            menuSection.style.pointerEvents = 'none'
-        }, 1000)
+        setTimeout(()=> {
+            app_div.animate([
+                {width: '70%'},
+                {width: '99%'}
+            ], {
+                duration: 1000,
+                easing: 'cubic-bezier(.42,.2,.1,1.08)',
+                fill: 'forwards'
+            })
+            setTimeout(() => {
+    
+                inTransition = false
+                menuIsOn = false
+                menuSection.style.pointerEvents = 'none'
+            }, 1000)
+        }, 500)
 
     }
 }
 
+const allowedTargets = ['contactBtn', 'portfolioBtn', 'menuSection']
 
-
-contactBtn.addEventListener('click', openMenu)
-portfolioBtn.addEventListener('click', openMenu)
-menuSection.addEventListener('click', openMenu)
+//la condition évite que le menu ne se ferme quand les liens qui s'y trouvent sont cliqué. Seuls les 
+//élément listés dans "allowedTargets" peuvent ouvrir et fermer le menu
+menuSection.addEventListener('click', e => {
+    if(allowedTargets.includes(e.target.id)){
+        openMenu()
+    }
+ 
+    
+})
 
 
 

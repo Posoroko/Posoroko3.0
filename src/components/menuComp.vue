@@ -1,14 +1,11 @@
 <template>
 
     <div class="menuSection" id="menuSection" @click="handleClick">
-        <div class="backdrop" id="backdrop" ref="backdrop" >
-            <div class="menuContentBox" >
-        
+
+            <div class="menuContentBox" id="menuContentBox">
                 <menuContent :content="menuComponent"/>
-               
-                
             </div>
-        </div>
+
         <div class="menuBtnBox" >
             <p class="lightText menuBtn" ref="contactRef"  id="contactBtn" @click="handleClick">{{contact}}</p>
             <p class="lightText menuBtn" ref="portfolioRef"  id="portfolioBtn" v-if="!menuIsOn" @click="handleClick">{{portfolio}}</p>
@@ -46,13 +43,15 @@ export default {
 
         let transitioning = false
         let menuIsOn = ref(false)
-        let backdrop = ref()
+        const allowedTargets = ['menuSection', 'contactBtn', 'portfolioBtn']
 
         function handleClick(e){
-            
-            if(!transitioning){
+            if(e.target.id == 'menuSection'){
+
+            }
+            if(!transitioning && allowedTargets.includes(e.target.id)){
                 
-                console.log(menuComponent.value)
+
                 transitioning = true
                 if(!menuIsOn.value){
                     menuIsOn.value = true
@@ -65,6 +64,7 @@ export default {
                     contactRef.value.style.fontFamily = "'Be Vietnam Pro', sans-serif"
                     contact.value = 'contact'
                     menuIsOn.value = false
+                    menuComponent.value = ''
                 }
                 setTimeout(() => {transitioning = false}, 1000) 
             }
@@ -74,46 +74,35 @@ export default {
 
         
 
-        return { contact, handleClick, contactRef, backdrop, menuIsOn, portfolio, portfolioRef, menuComponent }
+        return { contact, handleClick, contactRef, menuIsOn, portfolio, portfolioRef, menuComponent }
     }
 }
 </script>
 
-<style>
+<style scoped>
 .menuSection{
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     position: fixed;
-    z-index: 10000;
-    pointer-events: none;
-
-}
-.backdrop{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    opacity: 0;
     pointer-events: none;
     display: grid;
     place-items: center;
 }
+
 .menuBtnBox{
     position: absolute;
     top: 10vh;
     right: 10vw;
     pointer-events: auto;
+
 }
 .menuBtn{
     font-size: max(1.3vw, 12px);
     font-weight: 100;
 }
-.menuContentBox{
-    width: min(100%, 1000px);
-    height: 50vh;
-    
-}
+
 .menuItem{
     font-size: 25px;
     font-weight: 100;

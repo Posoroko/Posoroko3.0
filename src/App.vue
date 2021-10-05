@@ -1,5 +1,5 @@
 <template>
-          <menuComp />
+          
 
 
           <bigLogo />
@@ -11,6 +11,7 @@
           </div>
 
           <footerComp />
+          <menuComp />
 
           
 
