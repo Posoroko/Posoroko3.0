@@ -6,9 +6,10 @@
                 <menuContent :content="menuComponent"/>
             </div>
 
-        <div class="menuBtnBox" >
-            <p class="lightText menuBtn" ref="contactRef"  id="contactBtn" @click="handleClick">{{contact}}</p>
-            <p class="lightText menuBtn" ref="portfolioRef"  id="portfolioBtn" v-if="!menuIsOn" @click="handleClick">{{portfolio}}</p>
+        <div class="menuBtnBox" ref="menuBtnBox">
+            <p class="lightText menuBtn" ref="contact"  id="contactBtn" v-if="!menuIsOn" @click="handleClick">contact</p>
+            <p class="lightText menuBtn" ref="portfolio"  id="portfolioBtn" v-if="!menuIsOn" @click="handleClick">portfolio</p>
+            <p class="lightText menuBtn closeBtn" ref="close" id="closeBtn" v-if="menuIsOn" @click="handleClick">close</p>
         </div>
 
             
@@ -33,40 +34,73 @@ import menuContent from '@/components/menuContent'
 export default {
     components: { menuContent },
     setup() {
-        let contact = ref('contact')
-        let contactRef = ref()
-        
-        let portfolio = ref('portfolio')
-        let portfolioRef = ref()
 
         let menuComponent = ref('')
+        const contact = ref(null)
+        const portfolio = ref(null)
+        const close = ref(null)
+        const menuBtnBox = ref(null)
 
-        let transitioning = false
         let menuIsOn = ref(false)
-        const allowedTargets = ['menuSection', 'contactBtn', 'portfolioBtn']
+        let transition = false
+        const allowedTargets = ['contactBtn', 'portfolioBtn', 'closeBtn', 'menuSection']
+        const openers = ['contactBtn', 'portfolioBtn']
+        const closers = ['closeBtn', 'menuSection']
 
         function handleClick(e){
-            if(e.target.id == 'menuSection'){
+            
+            if(!transition && allowedTargets.includes(e.target.id)){
+                    
 
-            }
-            if(!transitioning && allowedTargets.includes(e.target.id)){
+                if(!menuIsOn.value && openers.includes(e.target.id)){
+                    transition = true
+                    
+                    menuBtnBox.value.animate([
+                        {opacity: '1', offset: 0},
+                        {opacity: '0', offset: 0.5},
+                        {opacity: '1', offset: 1}
+                    ], {
+                        duration: 1500,
+                        easing: 'linear',
+                        fill: 'forwards'
+                    })
+
+                    setTimeout(()=>{
+                        menuIsOn.value = true
+                        
+                    }, 750)
+                    setTimeout(()=>{
+                        transition = false
+                        
+                    }, 1500)
+                    
+
+                    menuComponent.value = e.target.id
                 
 
-                transitioning = true
-                if(!menuIsOn.value){
-                    menuIsOn.value = true
-                    contactRef.value.style.fontFamily = 'Material Icons'
-                    contact.value = 'close'
-                    menuComponent.value = e.target.id
+                } else if(menuIsOn.value && closers.includes(e.target.id)){
 
-                    
-                } else{
-                    contactRef.value.style.fontFamily = "'Be Vietnam Pro', sans-serif"
-                    contact.value = 'contact'
-                    menuIsOn.value = false
-                    menuComponent.value = ''
+                    transition = true
+                    menuComponent.value = null
+                    menuBtnBox.value.animate([
+                        {opacity: '1', offset: 0},
+                        {opacity: '0', offset: 0.5},
+                        {opacity: '1', offset: 1}
+                    ], {
+                        duration: 1500,
+                        easing: 'linear',
+                        fill: 'forwards'
+                    })
+                    setTimeout(()=>{
+                        menuIsOn.value = false
+                        
+                    }, 750)
+                    setTimeout(()=>{
+                        transition = false
+                        menuIsOn.value = false
+                    }, 1500)
                 }
-                setTimeout(() => {transitioning = false}, 1000) 
+                
             }
         }
 
@@ -74,7 +108,7 @@ export default {
 
         
 
-        return { contact, handleClick, contactRef, menuIsOn, portfolio, portfolioRef, menuComponent }
+        return {  handleClick, menuIsOn, menuComponent, contact, portfolio, close, menuBtnBox }
     }
 }
 </script>
@@ -96,11 +130,15 @@ export default {
     top: 10vh;
     right: 10vw;
     pointer-events: auto;
+}
+.closeBtn{
+    font-family: 'Material Icons';
 
 }
 .menuBtn{
     font-size: max(1.3vw, 12px);
     font-weight: 100;
+
 }
 
 .menuItem{

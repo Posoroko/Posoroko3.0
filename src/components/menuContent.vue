@@ -1,6 +1,7 @@
 <template>
     <section class="menuContentSection" ref="section">
-        <div class="contact" v-if="content === 'contactBtn'">
+        <div class="contact" v-if="showContent === 'contactBtn'">
+            <img class="textureTv" src="https://i.ibb.co/bXgjx54/test-texture-tv.jpg" alt="singe-diesel" border="0" >
             <p class="lightText menuItem" >eric@posoroko.com</p>
             <p class="lightText  menuItem">06 95 07 12 64</p>
             <p class="lightText  menuItem">Carhaix-Plouguer</p>
@@ -17,26 +18,8 @@
                     <img class="textureTv" src="https://i.ibb.co/bXgjx54/test-texture-tv.jpg" alt="singe-diesel" border="0" >
                     <h1 class="lightText projectName">Krismenn</h1>
                 </div>
-                <div class="krismennBox projectBox">
-                    <img class="krismenn projectImg" src="https://i.ibb.co/GvRyC5R/krismenn.jpg" alt="krismenn" border="0">
-                    <img class="textureTv" src="https://i.ibb.co/bXgjx54/test-texture-tv.jpg" alt="singe-diesel" border="0" >
-                    <h1 class="lightText projectName">Krismenn</h1>
-                </div>
-                <div class="krismennBox projectBox">
-                    <img class="krismenn projectImg" src="https://i.ibb.co/GvRyC5R/krismenn.jpg" alt="krismenn" border="0">
-                    <img class="textureTv" src="https://i.ibb.co/bXgjx54/test-texture-tv.jpg" alt="singe-diesel" border="0" >
-                    <h1 class="lightText projectName">Krismenn</h1>
-                </div>
-                <div class="krismennBox projectBox">
-                    <img class="krismenn projectImg" src="https://i.ibb.co/GvRyC5R/krismenn.jpg" alt="krismenn" border="0">
-                    <img class="textureTv" src="https://i.ibb.co/bXgjx54/test-texture-tv.jpg" alt="singe-diesel" border="0" >
-                    <h1 class="lightText projectName">Krismenn</h1>
-                </div>
-                <div class="krismennBox projectBox">
-                    <img class="krismenn projectImg" src="https://i.ibb.co/GvRyC5R/krismenn.jpg" alt="krismenn" border="0">
-                    <img class="textureTv" src="https://i.ibb.co/bXgjx54/test-texture-tv.jpg" alt="singe-diesel" border="0" >
-                    <h1 class="lightText projectName">Krismenn</h1>
-                </div>
+               
+                
             </div>
 
   </section>
@@ -50,7 +33,7 @@ export default {
     setup(props){
         const showContent = ref(null)
         const section = ref(null)
-
+        const allowedTargets = ['portfolioBtn', 'contactBtn']
         onMounted(() => {
 
         console.log(showContent.value)
@@ -58,10 +41,9 @@ export default {
         
         watch(() => props.content, (a,b) => {
             
-                if(a){
+                if(allowedTargets.includes(a)){         //ouvre le menu juste si on click sur un lien du menu
                 setTimeout(()=>{
                 showContent.value = a;
-                console.log(showContent.value)
                 section.value.animate([
                     {opacity: '0'},
                     {opacity: '1'}
@@ -71,11 +53,10 @@ export default {
                     fill: 'forwards'
                 })
                 }, 800)
-            }else{
-                console.log(showContent.value)
+            }else if(!a || a == 'menuSection'){         //ferme le menu si on clique sur la croix ou sur le backdrop
+
                 setTimeout(()=>{
                     showContent.value = props.content
- 
                     }, 1100)
                 section.value.animate([
                     {opacity: '1'},
@@ -110,19 +91,19 @@ export default {
 .menuContentSection{
     display: flex;
     align-items: center;
-    /* animation: 1s ease slide forwards; */
+
 }
-@keyframes slide {
-    from{margin-left: 100vw;}
-    to{margin-left: 0vw;}
-    
-}
+
 .contact{
     height: 400px;
+    width: min(90vw, 300px);
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     place-items: flex-start;
+    background: radial-gradient(circle, rgb(109, 30, 85) 0%, rgb(66, 20, 20) 100%);
+    overflow: hidden;
 }
 .portfolio{
 
@@ -132,7 +113,7 @@ export default {
     position: relative;
     display: flex;
     flex-wrap: wrap;
-   overflow: scroll;
+   overflow: auto;
     opacity: 1;
 }
 
