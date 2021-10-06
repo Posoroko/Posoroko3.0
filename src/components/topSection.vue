@@ -68,7 +68,7 @@ export default {
 }
 .topTitle{
     height: 100%;
-    filter: blur(0.5px);
+    filter: blur(0.8px);
     animation: 1000ms ease-out slideIn;
     overflow: visible;
 }
@@ -91,13 +91,14 @@ export default {
     height: 80%;
     display: flex;
     flex-direction: column-reverse;
+    filter: blur(0.6px);
 }
 .subtitle{
     font-size: max(2vw, 16px);
     font-weight: 100;
     padding: 0px 0px 0px 50px;
     text-shadow: 0 0 8px black;
-    filter: blur(0.4px);
+    
     animation: 1000ms ease-out blurIn;
 }
 @keyframes blurIn {

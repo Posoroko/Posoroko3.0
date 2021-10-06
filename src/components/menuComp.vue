@@ -149,6 +149,7 @@ export default {
 }
 .menuBtn:hover{
     font-weight: 300;
+    cursor: pointer;
 }
 
 .menuItem{

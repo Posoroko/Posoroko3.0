@@ -104,6 +104,7 @@ const allowedTargets = ['closeBtn', 'contactBtn', 'portfolioBtn', 'menuSection']
 //la condition évite que le menu ne se ferme quand les liens qui s'y trouvent sont cliqué. Seuls les 
 //élément listés dans "allowedTargets" peuvent ouvrir et fermer le menu
 menuSection.addEventListener('click', e => {
+    console.log(e.target.id)
     if(allowedTargets.includes(e.target.id)){
         openMenu()
     }

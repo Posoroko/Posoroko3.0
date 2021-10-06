@@ -10,19 +10,20 @@
             <div   class="portfolio" v-if="showContent === 'portfolioBtn'" >
                 <div class="singeDieselBox projectBox">
                     <img class="projectImg" src="https://i.ibb.co/RNppfF3/singe-diesel.gif" alt="">
-                    <h1 class="lightText projectName">singediesel.org</h1>
+                    <a target="_blank" rel="noopener noreferrer" class="lightText projectName" href="https://www.singediesel.org">singediesel.org</a>
                 </div>
                 <div class="krismennBox projectBox">
                     <img class="krismenn projectImg" src="https://i.ibb.co/ZMKj8wY/krismenn.gif" alt="krismenn" border="0">
-                    <h1 class="lightText projectName">krismenn.com</h1>
+                    <a target="_blank" rel="noopener noreferrer" class="lightText projectName" href="https://krismenn.com">krismenn.com</a>
                 </div>
                <div class="pizza projectBox">
                     <img class="krismenn projectImg" src="https://i.ibb.co/bB979bw/pizza-glitch.gif" alt="krismenn" border="0">
-                    <h1 class="lightText projectName">pizza</h1>
+
+                    <a target="_blank" rel="noopener noreferrer" class="lightText projectName" href="https://pizza-sign.netlify.app/">pizza</a>
                 </div>
                 <div class=" projectBox">
                     <img class="krismenn projectImg" src="https://i.ibb.co/cQfVLWg/ramen-glitch.gif" alt="krismenn" border="0">
-                    <h1 class="lightText projectName">ramen</h1>
+                    <a target="_blank" rel="noopener noreferrer" class="lightText projectName" href="https://neon-ramen.netlify.app/">ramen</a>
                 </div>
                 
             </div>
@@ -147,7 +148,14 @@ export default {
     position: absolute;
     bottom: 0;
 } 
-
+a{
+    pointer-events: auto;
+    text-decoration: none;
+}
+a:hover{
+    cursor: pointer;
+    font-weight: 400;
+}
 
 
 .projectImg{
