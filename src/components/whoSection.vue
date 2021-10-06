@@ -2,7 +2,7 @@
   <section class="whoSection">
         
         <div class="photoEricBox">
-            <img class="photoEric" src="Eric-Podhorecki.gif" alt="Eric Podhorecki">
+            <img class="photoEric" src="https://i.ibb.co/0JmPhFR/Eric-Podhorecki.gif" alt="Eric Podhorecki">
 
             <div class="ericNameBox">
                 <h3 class="ericName lightText">Eric Podhorecki</h3>

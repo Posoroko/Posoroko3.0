@@ -1,7 +1,7 @@
 <template>
     <section class="menuContentSection" ref="section">
         <div class="contact" v-if="showContent === 'contactBtn'">
-            <img class="textureTv fondGlitch" src="fond-glitch.gif" alt="singe-diesel" border="0" >
+            <img class="textureTv fondGlitch" src="https://i.ibb.co/56755Dg/fond-glitch.gif" alt="singe-diesel" border="0" >
             <p class="lightText menuItem" >eric@posoroko.com</p>
             <p class="lightText  menuItem">06 95 07 12 64</p>
             <a class="lightText  menuItem" href="https://www.instagram.com/ericpodhorecki/">instagram</a>
@@ -9,19 +9,19 @@
 
             <div   class="portfolio" v-if="showContent === 'portfolioBtn'" >
                 <div class="singeDieselBox projectBox">
-                    <img class="projectImg" src="singe-diesel.gif" alt="">
+                    <img class="projectImg" src="https://i.ibb.co/RNppfF3/singe-diesel.gif" alt="">
                     <h1 class="lightText projectName">singediesel.org</h1>
                 </div>
                 <div class="krismennBox projectBox">
-                    <img class="krismenn projectImg" src="krismenn.gif" alt="krismenn" border="0">
+                    <img class="krismenn projectImg" src="https://i.ibb.co/ZMKj8wY/krismenn.gif" alt="krismenn" border="0">
                     <h1 class="lightText projectName">krismenn.com</h1>
                 </div>
                <div class="pizza projectBox">
-                    <img class="krismenn projectImg" src="pizza-glitch.gif" alt="krismenn" border="0">
+                    <img class="krismenn projectImg" src="https://i.ibb.co/bB979bw/pizza-glitch.gif" alt="krismenn" border="0">
                     <h1 class="lightText projectName">pizza</h1>
                 </div>
                 <div class=" projectBox">
-                    <img class="krismenn projectImg" src="ramen-glitch.gif" alt="krismenn" border="0">
+                    <img class="krismenn projectImg" src="https://i.ibb.co/cQfVLWg/ramen-glitch.gif" alt="krismenn" border="0">
                     <h1 class="lightText projectName">ramen</h1>
                 </div>
                 
