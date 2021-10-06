@@ -150,7 +150,7 @@ export default {
 .projectName{
     font-size: max(1vw, 20px);
     font-weight: 200;
-    text-shadow: 0 1px 10px rgb(102, 73, 73);
+    text-shadow: 0 1px 5px rgb(5, 2, 2);
     position: absolute;
     bottom: 0;
 } 
@@ -168,7 +168,13 @@ a:hover{
     width: 100%;
     mix-blend-mode:screen;
 }
-
-
+.fondGlitch{
+    width: 100%;
+    position: absolute;
+    mix-blend-mode:color-dodge;
+}
+.ramen{
+    width: min(90vw, 310px);
+}
 
 </style>
