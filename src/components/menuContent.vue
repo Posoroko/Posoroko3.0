@@ -100,7 +100,7 @@ export default {
 }
 
 .contact{
-    height: 400px;
+    height: 401px;
     width: min(90vw, 300px);
     display: flex;
     position: relative;
