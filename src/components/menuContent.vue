@@ -17,12 +17,16 @@
                     <a target="_blank" rel="noopener noreferrer" class="lightText projectName" href="https://krismenn.com">krismenn.com</a>
                 </div>
                <div class="pizza projectBox">
-                    <img class="krismenn projectImg" src="https://i.ibb.co/bB979bw/pizza-glitch.gif" alt="krismenn" border="0">
+                    <img class="krismenn projectImg" src="https://i.ibb.co/bB979bw/pizza-glitch.gif" alt="neon pizza" border="0">
 
                     <a target="_blank" rel="noopener noreferrer" class="lightText projectName" href="https://pizza-sign.netlify.app/">pizza</a>
                 </div>
                 <div class=" projectBox">
-                    <img class="krismenn projectImg" src="https://i.ibb.co/cQfVLWg/ramen-glitch.gif" alt="krismenn" border="0">
+                    <img class="krismenn projectImg" src="https://i.ibb.co/cQfVLWg/ramen-glitch.gif" alt="neon ramen" border="0">
+                    <a target="_blank" rel="noopener noreferrer" class="lightText projectName" href="https://neon-ramen.netlify.app/">ramen</a>
+                </div>
+                <div class=" projectBox">
+                    <img class="snakoroko projectImg" src="https://i.ibb.co/WH66QX0/snake-glitch.gif" alt="Snakoroko" border="0">
                     <a target="_blank" rel="noopener noreferrer" class="lightText projectName" href="https://neon-ramen.netlify.app/">ramen</a>
                 </div>
                 

@@ -44,7 +44,7 @@
 import { ref } from 'vue'
 export default {
     setup(){
-        document.addEventListener('scroll', handleScroll)
+        // document.addEventListener('scroll', handleScroll)
         const logo = ref()
 
         function handleScroll() {

@@ -22,18 +22,34 @@ export default {
     setup() {
         const swirlPath = ref(null)
         const body = document.getElementsByTagName('body');
-        let ratio = 0;
+
+        let distance = null
         window.addEventListener('scroll', handleScroll)
         onMounted(() => {
-            swirlPath.value.style.strokeDasharray = swirlPath.value.getTotalLength();
-            swirlPath.value.style.strokeDashoffset = swirlPath.value.getTotalLength();
+            swirlPath.value.style.strokeDasharray = swirlPath.value.getTotalLength()
+            swirlPath.value.style.strokeDashoffset = swirlPath.value.getTotalLength()
+           
+            
         });
         
         
         function handleScroll() {
+            if(!distance){
+                distance = body[0].clientHeight - window.innerHeight
+            }
+            let ratio = distance / window.scrollY
+            let line = swirlPath.value.getTotalLength() / ratio 
+            swirlPath.value.style.strokeDashoffset = swirlPath.value.getTotalLength() - line
+
+
+
+
+
+
+
             
-            ratio = swirlPath.value.getTotalLength() * window.scrollY / body[0].clientHeight;
-            swirlPath.value.style.strokeDashoffset = swirlPath.value.getTotalLength() - ratio * 1.5 ;
+            // ratio = swirlPath.value.getTotalLength() * window.scrollY / body[0].clientHeight
+            // swirlPath.value.style.strokeDashoffset = swirlPath.value.getTotalLength() - ratio * 1.5 ;
 
         
         }
