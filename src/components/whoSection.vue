@@ -2,8 +2,8 @@
   <section class="whoSection">
         
         <div class="photoEricBox">
-            <img class="photoEric" src="https://i.ibb.co/PFN5JbK/Eric-Podhorecki.jpg" alt="Eric Podhorecki">
-            <div class="textureBox"></div>
+            <img class="photoEric" src="Eric-Podhorecki.gif" alt="Eric Podhorecki">
+
             <div class="ericNameBox">
                 <h3 class="ericName lightText">Eric Podhorecki</h3>
             </div>
@@ -74,30 +74,12 @@ export default {
     height: 100%;
     width: 100%;
     mix-blend-mode:difference;
-    /* animation:  50ms linear buzz alternate infinite; */
+ 
     opacity: 0.2;
     position: absolute;
     top:0;
     left: 0;
     filter:contrast(5);
 }
-@keyframes buzz {
-    0%{
-        filter: blur(0px);
-        transform: translate(0px, 0px);
-    }
-    0%{
-        filter: blur(0px);
-        transform: translate(1px, 0px);
-    }
-    0%{
-        filter: blur(0px);
-        transform: translate(0px, 1px);
-    }
-    
-    100%{ 
-        filter: blur(1px);
-        transform: translate(-1px, 0px);
-    }
-}
+
 </style>
