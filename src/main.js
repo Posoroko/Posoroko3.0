@@ -93,7 +93,7 @@ function openMenu() {
         setTimeout(()=>{
             menuIsOn = false
             transition = false
-            menuSection.style.pointerEvents ='auto'
+            menuSection.style.pointerEvents ='none'
             body[0].style.overflow = 'auto'
         }, 1500)
     }
@@ -106,6 +106,7 @@ const allowedTargets = ['closeBtn', 'contactBtn', 'portfolioBtn', 'menuSection']
 menuSection.addEventListener('click', e => {
     console.log(e.target.id)
     if(allowedTargets.includes(e.target.id)){
+        console.log(e.target.ig)
         openMenu()
     }
  
