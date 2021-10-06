@@ -47,7 +47,9 @@ export default {
 
 }
 .photoEricBox{
-    width: 60%;
+    width: min(100%, 1000px);
+    margin-left: auto; 
+    margin-right: 0;
     position: relative;
     background-color: rgb(112, 129, 110);
 }

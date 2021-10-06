@@ -27,7 +27,7 @@
                 </div>
                 <div class=" projectBox">
                     <img class="snakoroko projectImg" src="https://i.ibb.co/WH66QX0/snake-glitch.gif" alt="Snakoroko" border="0">
-                    <a target="_blank" rel="noopener noreferrer" class="lightText projectName" href="https://neon-ramen.netlify.app/">ramen</a>
+                    <a target="_blank" rel="noopener noreferrer" class="lightText projectName" href="https://neon-ramen.netlify.app/">Snakoroko</a>
                 </div>
                 
             </div>
@@ -101,7 +101,7 @@ export default {
 .menuContentSection{
     display: flex;
     align-items: center;
-
+    justify-content: center;
 }
 
 .contact{
@@ -119,7 +119,7 @@ export default {
 .portfolio{
     height: min(100vh, 800px);
     width: 100vw;
-    /* background-color: rgba(20, 40, 66, 1); */
+    padding: 0 0 5vh 0;
     background: radial-gradient(circle, rgba(20,66,63,1) 0%, rgba(20,40,66,1) 100%);
     position: relative;
     display: flex;
@@ -139,16 +139,18 @@ export default {
    cursor:pointer;
 }
 .projectBox{
+    width: min(100vw, 300px);
     position: relative;
+    margin: 5vh 3vw 0 3vw;
     display: grid;
     place-items: center;
     box-shadow: 0px 0px 10px rgba(6, 13, 20, 0.993);
 }
 
 .projectName{
-    font-size: max(1vw, 16px);
+    font-size: max(1vw, 20px);
     font-weight: 200;
-    text-shadow: 0 1px 5px rgb(255, 255, 255);
+    text-shadow: 0 1px 10px rgb(102, 73, 73);
     position: absolute;
     bottom: 0;
 } 
@@ -163,16 +165,10 @@ a:hover{
 
 
 .projectImg{
-    width: min(100vw, 300px);
+    width: 100%;
     mix-blend-mode:screen;
 }
-.fondGlitch{
-    width: 100%;
-    position: absolute;
-    mix-blend-mode:color-dodge;
-}
-.ramen{
-    width: min(90vw, 310px);
-}
+
+
 
 </style>

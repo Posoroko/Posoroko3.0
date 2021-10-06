@@ -71,10 +71,10 @@ export default {
     stroke: #bb5436;
     fill: none;
     filter: drop-shadow(0 0 0px rgb(138, 110, 91));
-    animation: 1000ms linear pulse infinite alternate;
+    animation: 2000ms linear pulse infinite alternate;
 }
 @keyframes pulse {
     from{filter:drop-shadow(0 0 3px rgb(138, 110, 91));}
-    to{filter:drop-shadow(0 0 5px rgb(138, 110, 91));}   
+    to{filter:drop-shadow(0 0 8px rgb(138, 110, 91));}   
 }
 </style>

@@ -24,7 +24,7 @@ export default {
 <style>
 .motoSection{
     width: 100%;
-    padding: 10vw 0px 10vw 0px;
+    padding: 15vw 0px 15vw 0px;
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
@@ -33,11 +33,11 @@ export default {
 }
 .moto{
     height: 100%;
-    font-size: max(2.3vw, 12px);
+    font-size: max(2.3vw, 14px);
     font-weight: 100;
     text-align: end;
     text-shadow: 0 0 8px black;
-    filter: blur(0px);
+    filter: blur(0.5px);
     animation: 1000ms ease-out blurIn;
     pointer-events: auto;
 }

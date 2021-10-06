@@ -34,7 +34,7 @@ export default {
 <style scoped>
 #fullPage{
   width: 100%;
-  padding: 0 10%;
+  padding: 0 10vw;
   position: relative;
 
 }
