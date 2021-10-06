@@ -74,7 +74,7 @@ export default {
 
 .pathBigLogo{
     fill: var(--darkMid);
-    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7));
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.39));
 }
 
 

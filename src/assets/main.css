@@ -5,11 +5,13 @@
 :root {
     --light: white;
     --lightMid: #A6B63D;
-    --darkMid: #202020;
-    --dark: #1d1915;
+    --darkMid: #1d1c1b;
+    --dark: #1d1c1b;
 
     font-size: 62.5%;
     /*thème chocolat
+--dark: #1d1915;
+--darkMid: #202020;
 
     #bd8766
     #241e16

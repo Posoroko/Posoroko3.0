@@ -24,22 +24,21 @@ export default {
 <style>
 .motoSection{
     width: 100%;
-    padding: 15vw 0px 22vw 0px;
+    padding: 10vw 0px 10vw 0px;
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
-
     position: relative;
     pointer-events: none;
 }
 .moto{
-    font-size: max(2.3vw, 16px);
+    height: 100%;
+    font-size: max(2.3vw, 12px);
     font-weight: 100;
     text-align: end;
     text-shadow: 0 0 8px black;
     filter: blur(0px);
     animation: 1000ms ease-out blurIn;
-    position: absolute;
     pointer-events: auto;
 }
 </style>

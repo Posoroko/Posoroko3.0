@@ -4,21 +4,26 @@
             <img class="textureTv fondGlitch" src="fond-glitch.gif" alt="singe-diesel" border="0" >
             <p class="lightText menuItem" >eric@posoroko.com</p>
             <p class="lightText  menuItem">06 95 07 12 64</p>
-            <p class="lightText  menuItem">Carhaix-Plouguer</p>
+            <a class="lightText  menuItem" href="https://www.instagram.com/ericpodhorecki/">instagram</a>
         </div>
 
             <div   class="portfolio" v-if="showContent === 'portfolioBtn'" >
                 <div class="singeDieselBox projectBox">
                     <img class="projectImg" src="singe-diesel.gif" alt="">
-                    <!-- <img class="marionette projectImg" src="https://i.ibb.co/gDVpY13/singe-diesel.jpg" alt="singe-diesel" border="0">
-                    <img class="textureTv" src="https://i.ibb.co/bXgjx54/test-texture-tv.jpg" alt="singe-diesel" border="0" > -->
                     <h1 class="lightText projectName">singediesel.org</h1>
                 </div>
                 <div class="krismennBox projectBox">
                     <img class="krismenn projectImg" src="krismenn.gif" alt="krismenn" border="0">
                     <h1 class="lightText projectName">krismenn.com</h1>
                 </div>
-               
+               <div class="pizza projectBox">
+                    <img class="krismenn projectImg" src="pizza-glitch.gif" alt="krismenn" border="0">
+                    <h1 class="lightText projectName">pizza</h1>
+                </div>
+                <div class=" projectBox">
+                    <img class="krismenn projectImg" src="ramen-glitch.gif" alt="krismenn" border="0">
+                    <h1 class="lightText projectName">ramen</h1>
+                </div>
                 
             </div>
 
@@ -101,20 +106,23 @@ export default {
     position: relative;
     flex-direction: column;
     justify-content: center;
-    place-items: flex-start;
+    align-items: center;
     background: radial-gradient(circle, rgb(109, 30, 85) 0%, rgb(66, 20, 20) 100%);
     overflow: hidden;
+    box-shadow: 0 0 30px rgba(248, 114, 114, 0.507);
 }
 .portfolio{
-
+    height: min(100vh, 800px);
+    width: 100vw;
     /* background-color: rgba(20, 40, 66, 1); */
     background: radial-gradient(circle, rgba(20,66,63,1) 0%, rgba(20,40,66,1) 100%);
-    
-    padding: 20px 0px;
     position: relative;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
-    overflow: auto;
+    overflow-y:scroll;
+    
     opacity: 1;
    
 }
@@ -122,20 +130,18 @@ export default {
 .menuItem{
    font-size: 20px;
    font-weight: 100;
-   padding: 25px;
+   pointer-events: auto;
+   cursor:pointer;
 }
 .projectBox{
-    width: min(90vw, 310px);
-    margin: 30px;
     position: relative;
     display: grid;
     place-items: center;
-    overflow: hidden;
     box-shadow: 0px 0px 10px rgba(6, 13, 20, 0.993);
 }
 
 .projectName{
-    font-size: max(1vw, 12px);
+    font-size: max(1vw, 16px);
     font-weight: 200;
     text-shadow: 0 1px 5px rgb(255, 255, 255);
     position: absolute;
@@ -145,7 +151,7 @@ export default {
 
 
 .projectImg{
-    width: 100%;
+    width: min(100vw, 300px);
     mix-blend-mode:screen;
 }
 .fondGlitch{
@@ -153,6 +159,8 @@ export default {
     position: absolute;
     mix-blend-mode:color-dodge;
 }
-
+.ramen{
+    width: min(90vw, 310px);
+}
 
 </style>

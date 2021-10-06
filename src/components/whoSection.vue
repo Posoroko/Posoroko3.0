@@ -16,6 +16,10 @@
             <span class="job4 job">chef de projet</span>
         </h2>
         </div>
+
+        <p class="description lightText">
+            Eric Podhorecki est basé en Centre-Bretagne et est disponible pour travailler sur place ou à distance avec des entreprises, des particuliers ou des agences.
+        </p>
             
     </section>
 </template>
@@ -36,7 +40,9 @@ export default {
 .whoSection{
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     position: relative;
 
 }
@@ -67,19 +73,12 @@ export default {
     display: flex;
     flex-direction: column;
 }
-.textureBox{
-    background-image: url(https://i.ibb.co/bXgjx54/test-texture-tv.jpg);
-    background-size: contain;
-    background-repeat: repeat;
-    height: 100%;
-    width: 100%;
-    mix-blend-mode:difference;
- 
-    opacity: 0.2;
-    position: absolute;
-    top:0;
-    left: 0;
-    filter:contrast(5);
+.description{
+    width: 60%;
+    font-size: max(1vw, 12px);
+    font-weight: 100;
+    padding-top: 10vh;
+
 }
 
 </style>

@@ -126,19 +126,29 @@ export default {
 }
 
 .menuBtnBox{
+    width: 199px;
     position: absolute;
     top: 10vh;
     right: 10vw;
     pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+
 }
 .closeBtn{
     font-family: 'Material Icons';
-
+}
+.closeBtn:hover{
+    font-size: max(0.9vw, 13px);;
 }
 .menuBtn{
-    font-size: max(1.3vw, 12px);
+    font-size: max(0.8vw, 12px);
     font-weight: 100;
-
+    margin: 2px;
+}
+.menuBtn:hover{
+    font-weight: 300;
 }
 
 .menuItem{
