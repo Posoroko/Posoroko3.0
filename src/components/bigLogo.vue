@@ -1,5 +1,5 @@
 <template>
-  <div class="bigLogoBox" id="bigLogoBox" ref="logo">
+  <div class="bigLogoBox clickOff" id="bigLogoBox" ref="logo">
 
         <svg version="1.1" class="bigLogoSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
              viewBox="-15 -20 535 760" style="enable-background:new 0 0 499.99 719.26;" xml:space="preserve">
@@ -66,7 +66,6 @@ export default {
     top: 0;
     filter: blur(0.5px);
     overflow: hidden;
-    pointer-events: none;
 }
 .bigLogoSVG{
     width: 100%;

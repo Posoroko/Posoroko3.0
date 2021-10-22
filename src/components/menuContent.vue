@@ -1,10 +1,10 @@
 <template>
     <section class="menuContentSection" ref="section">
-        <div class="contact" v-if="showContent === 'contactBtn'">
-            <img class="textureTv fondGlitch" src="https://i.ibb.co/56755Dg/fond-glitch.gif" alt="singe-diesel" border="0" >
+        <div class="contact clickOff" v-if="showContent === 'contactBtn'">
+            <img class="textureTv fondGlitch" src="https://i.ibb.co/56755Dg/fond-glitch.gif" alt="glitch" border="0" >
             <p class="lightText menuItem" >eric@posoroko.com</p>
             <p class="lightText  menuItem">06 95 07 12 64</p>
-            <a class="lightText  menuItem" href="https://www.instagram.com/ericpodhorecki/">instagram</a>
+            <a class="lightText  menuItem pointer instagram clickOn" href="https://www.instagram.com/ericpodhorecki/"  target="_blank">instagram</a>
         </div>
 
             <div   class="portfolio" v-if="showContent === 'portfolioBtn'" >
@@ -135,8 +135,6 @@ export default {
 .menuItem{
    font-size: 20px;
    font-weight: 100;
-   pointer-events: auto;
-   cursor:pointer;
 }
 .projectBox{
     width: min(100vw, 300px);
@@ -155,7 +153,6 @@ export default {
     bottom: 0;
 } 
 a{
-    pointer-events: auto;
     text-decoration: none;
 }
 a:hover{

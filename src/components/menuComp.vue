@@ -6,24 +6,13 @@
                 <menuContent :content="menuComponent"/>
             </div>
 
-        <div class="menuBtnBox" ref="menuBtnBox">
+        <div class="menuBtnBox clickOn" ref="menuBtnBox">
             <p class="lightText menuBtn" ref="contact"  id="contactBtn" v-if="!menuIsOn" @click="handleClick">contact</p>
             <p class="lightText menuBtn" ref="portfolio"  id="portfolioBtn" v-if="!menuIsOn" @click="handleClick">portfolio</p>
             <p class="lightText menuBtn closeBtn" ref="close" id="closeBtn" v-if="menuIsOn" @click="handleClick">close</p>
         </div>
-
-            
-
-        
-        
-        
-          
+  
     </div>
-
-        
-
-        
-      
 
 </template>
 
@@ -43,13 +32,13 @@ export default {
 
         let menuIsOn = ref(false)
         let transition = false
-        const allowedTargets = ['contactBtn', 'portfolioBtn', 'closeBtn', 'menuSection']
+        const allowedTargets = ['contactBtn', 'portfolioBtn', 'closeBtn', 'menuSection', 'menuContentBox']
         const openers = ['contactBtn', 'portfolioBtn']
         const closers = ['closeBtn', 'menuSection']
 
         function handleClick(e){
             
-            if(!transition && allowedTargets.includes(e.target.id)){
+            if(!transition){
                     
 
                 if(!menuIsOn.value && openers.includes(e.target.id)){
@@ -120,7 +109,6 @@ export default {
     left: 0;
     right: 0;
     position: fixed;
-    pointer-events: none;
     display: grid;
     align-items: center;
 }
@@ -131,7 +119,6 @@ export default {
     padding: 5px;
     top: 10vh;
     right: 10vw;
-    pointer-events: auto;
     display: flex;
     flex-direction: column;
     align-items:  center;

@@ -59,7 +59,20 @@ body{
 .lightText{
     color: var(--light);
 }
+.clickOff{
+    pointer-events: none;
+}
+.clickOn{
+    pointer-events: auto;
+}
+.pointer{
+    cursor: pointer;
+}
 
+.eric{
+    border: 5px solid blue;
+}
 
-
-
+.red{
+    border: 5px solid red;
+}

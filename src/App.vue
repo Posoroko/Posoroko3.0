@@ -1,6 +1,4 @@
 <template>
-          
-
 
           <bigLogo />
 
@@ -12,11 +10,6 @@
 
           <footerComp />
           <menuComp />
-
-          
-
-        
-        
 
 </template>
 

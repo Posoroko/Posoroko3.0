@@ -1,6 +1,6 @@
 <template>
-    <section class="motoSection">
-        <h2 class="moto fr lightText trad" id="moto" @click="handleClick" v-html="moto"></h2>
+    <section class="motoSection clickOn">
+        <h2 class="moto fr lightText trad clickOn" id="moto" @click="handleClick" v-html="moto"></h2>
     </section>
 </template>
 
@@ -28,8 +28,7 @@ export default {
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
-    position: relative;
-    pointer-events: none;
+    position: relative
 }
 .moto{
     height: 100%;
@@ -39,6 +38,5 @@ export default {
     text-shadow: 0 0 8px black;
     filter: blur(0.5px);
     animation: 1000ms ease-out blurIn;
-    pointer-events: auto;
 }
 </style>
