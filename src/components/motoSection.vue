@@ -1,6 +1,6 @@
 <template>
     <section class="motoSection">
-        <p class="moto fr lightText trad" id="moto" @click="handleClick" v-html="moto"></p>
+        <h2 class="moto fr lightText trad" id="moto" @click="handleClick" v-html="moto"></h2>
     </section>
 </template>
 

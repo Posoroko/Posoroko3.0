@@ -26,7 +26,7 @@
       </div>
 
       <div class="subtitleBox lightText tradBox">
-        <p class="subtitle fr trad" id="subtitle" @click="handleClick" v-html="subtitle"></p>
+        <h1 class="subtitle fr trad" id="subtitle" @click="handleClick" v-html="subtitle"></h1>
       </div>
 
     </section>
