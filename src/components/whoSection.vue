@@ -18,7 +18,7 @@
         </div>
 
         <p class="description lightText">
-            Je suis basé en Centre-Bretagne et suis disponible pour travailler à distance ou en présence avec tous types de client et pour tout type de projet.
+            Je suis basé en Centre-Bretagne et suis disponible pour travailler à distance ou en présence avec tout type de client et pour tout type de projet.
         </p>
             
     </section>
@@ -77,7 +77,7 @@ export default {
 }
 .description{
     width: 60%;
-    font-size: max(1vw, 12px);
+    font-size: max(1.5vw, 12px);
     font-weight: 100;
     padding-top: 10vh;
 
