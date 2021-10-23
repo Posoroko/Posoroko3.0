@@ -1,10 +1,10 @@
 <template>
 
-    <div class="menuSection" id="menuSection" @click="handleClick">
+    <div class="menuSection clickOff" id="menuSection" @click="handleClick">
 
-            <div class="menuContentBox" id="menuContentBox">
+
                 <menuContent :content="menuComponent"/>
-            </div>
+
 
         <div class="menuBtnBox clickOn" ref="menuBtnBox">
             <p class="lightText menuBtn" ref="contact"  id="contactBtn" v-if="!menuIsOn" @click="handleClick">contact</p>
@@ -110,7 +110,7 @@ export default {
     right: 0;
     position: fixed;
     display: grid;
-    align-items: center;
+    place-items: center;
 }
 
 .menuBtnBox{

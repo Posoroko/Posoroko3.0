@@ -27,7 +27,7 @@
                 </div>
                 <div class=" projectBox">
                     <img class="snakoroko projectImg" src="https://i.ibb.co/WH66QX0/snake-glitch.gif" alt="Snakoroko" border="0">
-                    <a target="_blank" rel="noopener noreferrer" class="lightText projectName" href="https://neon-ramen.netlify.app/">Snakoroko</a>
+                    <a target="_blank" rel="noopener noreferrer" class="lightText projectName" href="https://snakoroko.netlify.app/">Snakoroko</a>
                 </div>
                 
             </div>

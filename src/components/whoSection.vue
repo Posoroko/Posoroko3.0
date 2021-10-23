@@ -2,12 +2,12 @@
   <section class="whoSection">
         
         <div class="photoEricBox">
-            <img class="photoEric" src="https://i.ibb.co/0JmPhFR/Eric-Podhorecki.gif" alt="Eric Podhorecki">
+            <img class="photoEric" src="https://i.ibb.co/Bq5nS5T/Eric-Podhorecki-2.gif" alt="Eric Podhorecki">
 
             <div class="ericNameBox">
                 <h3 class="ericName lightText">Eric Podhorecki</h3>
             </div>
-            
+     
         <h2 class="jobsBox lightText">
             <span class="job0 job">développeur web</span>
             <span class="job1 job">designer</span>
@@ -18,7 +18,7 @@
         </div>
 
         <p class="description lightText">
-            Eric Podhorecki est basé en Centre-Bretagne et est disponible pour travailler sur place ou à distance avec des entreprises, des particuliers ou des agences.
+            Je suis basé en Centre-Bretagne et suis disponible pour travailler à distance ou en présence avec tous types de client et pour tout type de projet.
         </p>
             
     </section>
@@ -48,8 +48,8 @@ export default {
 }
 .photoEricBox{
     width: min(100%, 1000px);
-    margin-left: auto; 
-    margin-right: 0;
+    margin: auto; 
+
     position: relative;
     background-color: rgb(112, 129, 110);
 }

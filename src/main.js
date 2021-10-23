@@ -20,7 +20,7 @@ createApp(App).use(router).mount('#app')
 
 const app_div = document.getElementById('app')
 const menuSection = document.getElementById('menuSection')
-const body = document.getElementsByTagName('body');
+const body = document.getElementsByTagName('body')
 
 
 function shrinkBackground(how) {

@@ -41,13 +41,6 @@ export default {
             let line = swirlPath.value.getTotalLength() / ratio 
             swirlPath.value.style.strokeDashoffset = swirlPath.value.getTotalLength() - line
 
-
-
-
-
-
-
-            
             // ratio = swirlPath.value.getTotalLength() * window.scrollY / body[0].clientHeight
             // swirlPath.value.style.strokeDashoffset = swirlPath.value.getTotalLength() - ratio * 1.5 ;
 
