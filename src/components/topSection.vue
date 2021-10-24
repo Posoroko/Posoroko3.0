@@ -91,7 +91,7 @@ export default {
     height: 80%;
     display: flex;
     flex-direction: column-reverse;
-    filter: blur(0.5px);
+    /* filter: blur(0.5px); */
 }
 .subtitle{
     font-size: max(2vw, 16px);

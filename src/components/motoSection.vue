@@ -36,7 +36,7 @@ export default {
     font-weight: 100;
     text-align: end;
     text-shadow: 0 0 8px black;
-    filter: blur(0.5px);
+    /* filter: blur(0.5px); */
     animation: 1000ms ease-out blurIn;
 }
 </style>
