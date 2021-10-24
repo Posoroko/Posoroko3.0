@@ -124,8 +124,7 @@ export default {
     align-items:  center;
 }
 .closeBtn{
-    font-family: 'Material Icons';
-
+    font-family: 'Material icons';
 }
 .closeBtn:hover{
     font-size: max(1vw,20px);
