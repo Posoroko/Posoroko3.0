@@ -68,7 +68,7 @@ export default {
 }
 .topTitle{
     height: 100%;
-    filter: blur(0.8px);
+    
     animation: 1000ms ease-out slideIn;
     overflow: visible;
 }
