@@ -12,32 +12,37 @@
                     <img class="projectImg" src="https://i.ibb.co/RNppfF3/singe-diesel.gif" alt="">
                     <a target="_blank" rel="noopener noreferrer" class="lightText projectName" href="https://www.singediesel.org">singediesel.org</a>
                 </div>
+
                 <div class="krismennBox projectBox">
                     <img class="krismenn projectImg" src="https://i.ibb.co/ZMKj8wY/krismenn.gif" alt="krismenn" border="0">
                     <a target="_blank" rel="noopener noreferrer" class="lightText projectName" href="https://krismenn.com">krismenn.com</a>
                 </div>
+
                <div class="pizza projectBox">
                     <img class="krismenn projectImg" src="https://i.ibb.co/bB979bw/pizza-glitch.gif" alt="neon pizza" border="0">
 
                     <a target="_blank" rel="noopener noreferrer" class="lightText projectName" href="https://pizza-sign.netlify.app/">pizza</a>
                 </div>
+
                 <div class=" projectBox">
                     <img class="krismenn projectImg" src="https://i.ibb.co/cQfVLWg/ramen-glitch.gif" alt="neon ramen" border="0">
                     <a target="_blank" rel="noopener noreferrer" class="lightText projectName" href="https://neon-ramen.netlify.app/">ramen</a>
                 </div>
+
                 <div class=" projectBox">
                     <img class="snakoroko projectImg" src="https://i.ibb.co/WH66QX0/snake-glitch.gif" alt="Snakoroko" border="0">
                     <a target="_blank" rel="noopener noreferrer" class="lightText projectName" href="https://snakoroko.netlify.app/">Snakoroko</a>
                 </div>
-                
             </div>
 
   </section>
 </template>
 
-
 <script>
 import { props, ref, watch, onMounted } from 'vue'
+import { projects } from 'composbles/projects'
+
+
 export default {
     props: ['content'],
     setup(props){
@@ -76,16 +81,9 @@ export default {
                     easing: 'cubic-bezier(.02,.42,.1,1)',
                     fill: 'forwards'
                 })
-                
             }
-            
-            
-            
-
         })
-
         return { section, showContent }
-      
     }
 
 }
